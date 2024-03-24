@@ -18,6 +18,11 @@ const Detail = () => {
     });
   }, [id]);
 
+  const addFav = () => {
+    // Aqui iria la logica para agregar la Card en el localStorage
+    dispatch({ type: 'ADD_FAV', payload: doctorSelected });
+  };
+
   return (
     <>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
@@ -25,15 +30,19 @@ const Detail = () => {
 
       <h1>Detail Dentist id </h1>
       <p>name: {doctorSelected.name}</p>
-      <p>email: {doctorSelected.email}</p>
-      <p>phone: {doctorSelected.phone}</p>
-      <p>website: {doctorSelected.website}</p>
+      <p>
+        email:{' '}
+        <a href={`mailto:${doctorSelected.email}`}>{doctorSelected.email}</a>
+      </p>
+      <p>
+        phone:{' '}
+        <a href={`tel:${doctorSelected.phone}`}>{doctorSelected.phone}</a>
+      </p>
+      <p>
+        website: <a href={doctorSelected.website}> {doctorSelected.website}</a>
+      </p>
 
-      <button
-        onClick={() => dispatch({ type: 'ADD_FAV', payload: doctorSelected })}
-      >
-        ⭐
-      </button>
+      <button onClick={addFav}>⭐</button>
     </>
   );
 };

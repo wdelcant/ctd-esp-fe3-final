@@ -10,9 +10,11 @@ const Home = () => {
     <main className="">
       <h1>Home</h1>
       <div className="card-grid"> 
+
         {state.data.map(item => (
           <Card key={item.id} item={item} />
         ))}
+        
       </div>
     </main>
   );
