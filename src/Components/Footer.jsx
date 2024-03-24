@@ -1,10 +1,13 @@
-const Footer = () => {
-  return (
-    <footer>
-        <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
-    </footer>
-  )
-}
+import { useGlobalContext } from '../Components/utils/global.context';
 
-export default Footer
+const Footer = () => {
+  const { state } = useGlobalContext();
+  return (
+    <footer className={state.darkMode ? 'dark' : 'light'}>
+      <p>Powered by</p>
+      <img src="./img/DH.png" alt="DH-logo" />
+    </footer>
+  );
+};
+
+export default Footer;

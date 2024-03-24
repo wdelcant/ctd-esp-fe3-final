@@ -2,9 +2,8 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 import { reducer } from '../reducers/reducer';
 import { getDentists } from '../../Api/dentist';
 
-
 export const initialState = {
-  theme: 'light',
+  theme: false,
   data: [],
   doctorSelected: {},
   favs: JSON.parse(localStorage.getItem('favs')) || [],
