@@ -1,29 +1,37 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
+import { reducer } from '../reducers/reducer';
+import { getDentists } from '../../Api/dentist';
 
-import { reducer } from '../reducers/useReducer';
 
 export const initialState = {
-  theme: '',
+  theme: 'light',
   data: [],
+  doctorSelected: {},
   favs: JSON.parse(localStorage.getItem('favs')) || [],
 };
 
 export const ContextGlobal = createContext(undefined);
 
-
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
-      useEffect(() => {
-        //Mando al LS
-        localStorage.setItem('favs', JSON.stringify(state.favs));
-      }, [state.favs]);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    getDentists().then(data => {
+      dispatch({ type: 'GET_LIST', payload: data });
+      console.log(data);
+    });
+  }, []);
 
-  return <ContextGlobal.Provider value={{}}>{children}</ContextGlobal.Provider>;
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(state.favs));
+  }, [state.favs]);
+
+  return (
+    <ContextGlobal.Provider value={{ state, dispatch }}>
+      {children}
+    </ContextGlobal.Provider>
+  );
 };
+
+export const useGlobalContext = () => useContext(ContextGlobal);
