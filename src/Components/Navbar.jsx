@@ -17,7 +17,8 @@ const Navbar = () => {
       <Link to={routes.contact}>Conact</Link>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
 
-      <button onClick={toggleTheme}>Toggle theme</button>
+      <button onClick={toggleTheme}>Cambiar tema</button>
+
     </nav>
   );
 };

@@ -9,9 +9,9 @@ import { reducer } from '../reducers/reducer';
 import { getDentists } from '../../Api/dentist';
 
 export const initialState = {
-  theme: 'light',
+  theme: localStorage.getItem('theme') || 'light',
   data: [],
-  doctorSelected: {},
+  dentistSelected: {},
   favs: JSON.parse(localStorage.getItem('favs')) || [],
 };
 
@@ -35,6 +35,10 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('favs', JSON.stringify(state.favs));
   }, [state.favs]);
+
+  useEffect(() => {
+    localStorage.setItem('theme', state.theme);
+  }, [state.theme]);
 
   return (
     <ContextGlobal.Provider value={{ state, dispatch, toggleTheme }}>

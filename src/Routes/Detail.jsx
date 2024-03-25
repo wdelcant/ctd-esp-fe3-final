@@ -8,9 +8,8 @@ const Detail = () => {
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
   const { id } = useParams();
-
   const { state, dispatch } = useGlobalContext();
-  const { doctorSelected } = state;
+  const { dentistSelected } = state;
 
   useEffect(() => {
     getDentistById(id).then(data => {
@@ -19,27 +18,30 @@ const Detail = () => {
   }, [id]);
 
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
-    dispatch({ type: 'ADD_FAV', payload: doctorSelected });
+    const isFav = state.favs.some(fav => fav.id === dentistSelected.id);
+
+    if (isFav) {
+      dispatch({ type: 'DEL_FAV', payload: dentistSelected });
+    } else {
+      dispatch({ type: 'ADD_FAV', payload: dentistSelected });
+    }
   };
 
   return (
     <>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-
       <h1>Detail Dentist id </h1>
-      <p>name: {doctorSelected.name}</p>
+      <p>name: {dentistSelected.name}</p>
       <p>
         email:{' '}
-        <a href={`mailto:${doctorSelected.email}`}>{doctorSelected.email}</a>
+        <a href={`mailto:${dentistSelected.email}`}>{dentistSelected.email}</a>
       </p>
       <p>
         phone:{' '}
-        <a href={`tel:${doctorSelected.phone}`}>{doctorSelected.phone}</a>
+        <a href={`tel:${dentistSelected.phone}`}>{dentistSelected.phone}</a>
       </p>
       <p>
-        website: <a href={doctorSelected.website}> {doctorSelected.website}</a>
+        website:{' '}
+        <a href={dentistSelected.website}> {dentistSelected.website}</a>
       </p>
 
       <button onClick={addFav}>⭐</button>
