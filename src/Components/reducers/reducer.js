@@ -10,7 +10,7 @@ export const reducer = (state, action) => {
       const filteredFavs = state.favs.filter(fav => fav.id !== action.payload);
       return { ...state, favs: filteredFavs };
     case 'CHANGE_THEME':
-      return { ...state, darkMode: !state.darkMode };
+      return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
     default:
       return state;
   }

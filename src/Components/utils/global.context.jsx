@@ -1,9 +1,15 @@
-import { createContext, useContext, useEffect, useReducer } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 import { reducer } from '../reducers/reducer';
 import { getDentists } from '../../Api/dentist';
 
 export const initialState = {
-  theme: false,
+  theme: 'light',
   data: [],
   doctorSelected: {},
   favs: JSON.parse(localStorage.getItem('favs')) || [],
@@ -14,6 +20,10 @@ export const ContextGlobal = createContext(undefined);
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const toggleTheme = () => {
+    dispatch({ type: 'CHANGE_THEME' });
+  };
 
   useEffect(() => {
     getDentists().then(data => {
@@ -27,7 +37,7 @@ export const ContextProvider = ({ children }) => {
   }, [state.favs]);
 
   return (
-    <ContextGlobal.Provider value={{ state, dispatch }}>
+    <ContextGlobal.Provider value={{ state, dispatch, toggleTheme }}>
       {children}
     </ContextGlobal.Provider>
   );
