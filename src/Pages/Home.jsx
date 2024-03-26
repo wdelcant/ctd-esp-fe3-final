@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from '../Components/Card';
 import { useGlobalContext } from '../Components/utils/global.context';
 

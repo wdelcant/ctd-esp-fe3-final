@@ -1,11 +1,21 @@
 import { useGlobalContext } from '../Components/utils/global.context';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import Toast from '../Components/Toast';
 
 const Card = ({ item }) => {
   const { id, name, username } = item;
   const { state, dispatch } = useGlobalContext();
+
+  const [loading, setLoading] = useState(true); // Crea un estado local para el loading
+
+  useEffect(() => {
+    // Simula un tiempo de carga de 3 segundos
+    setTimeout(() => {
+      setLoading(false); // Pone el loading en false
+    }, 1000);
+  }, []);
 
   const isFav = state.favs.some(fav => fav.id === item.id);
   const addFav = () => {
@@ -25,7 +35,14 @@ const Card = ({ item }) => {
     setTimeout(() => dispatch({ type: 'CLEAR_TOAST' }), 5000);
   };
 
-  return (
+  return loading ? ( // Si los datos se están cargando
+    <div className="card card-skeleton">
+      <div className="img-skeleton"> </div>
+      <p className="text-skeleton"> </p>
+      <div className="text-skeleton"> </div>
+      <div className="button-skeleton"> </div>
+    </div>
+  ) : (
     <div className="card">
       {state.toastMessage && <Toast message={state.toastMessage} />}
       <img className="card img" src="/images/doctor.jpg" alt="avatar" />
