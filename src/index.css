@@ -12,6 +12,7 @@ body {
 }
 main {
   height: 100%;
+  min-height: 100vh;
 }
 
 code {
@@ -36,13 +37,14 @@ a:hover {
 footer {
   display: flex;
   justify-content: center;
+  background-color: #007bff;
+  color: #fff;
   text-align: center;
   padding: 2rem;
-  position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 footer > img {
@@ -52,6 +54,18 @@ footer > img {
 footer > p {
   margin: 0;
   padding-top: 0.7rem;
+}
+
+.dark footer {
+  background-color: #333;
+}
+
+.dark footer a {
+  color: #fff;
+}
+
+.dark footer a:hover {
+  color: rgb(136, 136, 136);
 }
 
 form {
@@ -144,9 +158,13 @@ tr:nth-child(even) {
   color: white;
 }
 
-// agrega los svg de la luna y el sol blanco cuando este dark
-.dark .toggle-button-label img.sun {
-  fill: #fff;
+.dark .card {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark h3 {
+  color: #fff;
 }
 
 .toggle-button-input {
@@ -254,6 +272,15 @@ tr:nth-child(even) {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.dark .navbar {
+  background-color: #333;
+}
+
+.dark .navbar a {
+  color: white;
 }
 
 .navbar img {
@@ -278,4 +305,155 @@ tr:nth-child(even) {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+.detailButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dark .detailButton {
+  background-color: #333;
+  color: #fff;
+}
+
+.detailButton:hover {
+  background-color: #0056b3;
+}
+
+.dark .detailButton {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.detailButton:hover {
+  background-color: #00007bff;
+}
+
+.detailTable {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.detailTable th,
+.detailTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.detailTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #007bff;
+  color: white;
+}
+
+.dark .detailTable th {
+  background-color: #333;
+}
+
+.dark .detailTable td,
+.dark .detailTable th {
+  color: #fff;
+}
+
+.clearButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.dark .clearButton {
+  background-color: #333;
+  color: #fff;
+}
+
+.clearButton:hover {
+  background-color: #0056b3;
+}
+
+.addFavButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.dark .addFavButton {
+  background-color: #333;
+  color: #fff;
+}
+
+.addFavButton:hover {
+  background-color: #0056b3;
+}
+
+.formContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.formField {
+  margin-bottom: 10px;
+}
+
+.formField label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formField input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark .submitButton {
+  background-color: #333;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.contactContainer {
+  min-height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.contactContainer h2,
+.contactContainer p {
+  margin-bottom: 20px;
 }

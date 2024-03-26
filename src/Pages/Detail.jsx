@@ -39,7 +39,7 @@ const Detail = () => {
     <>
       {state.toastMessage && <Toast message={state.toastMessage} />}
       <h1>Detail Dentist id </h1>
-      <table className="detail-table">
+      <table className="detailTable">
         <tbody>
           <tr>
             <td>Name:</td>
@@ -64,12 +64,24 @@ const Detail = () => {
           <tr>
             <td>Website:</td>
             <td>
-              <a href={dentistSelected.website}>{dentistSelected.website}</a>
+              <a
+                href={
+                  dentistSelected.website.startsWith('http')
+                    ? dentistSelected.website
+                    : `http://${dentistSelected.website}`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {dentistSelected.website}
+              </a>
             </td>
           </tr>
         </tbody>
       </table>
-      <button onClick={addFav}>{isFav ? '✖️' : '⭐'}</button>
+      <button onClick={addFav} className="addFavButton">
+        {isFav ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
+      </button>
     </>
   );
 };

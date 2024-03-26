@@ -21,7 +21,9 @@ const Favs = () => {
       {state.toastMessage && <Toast message={state.toastMessage} />}
       <h1>Dentists Favs</h1>
       {state.favs.length > 0 && (
-        <button onClick={clearFavs}>Vaciar lista de favoritos</button>
+        <button className="clearButton" onClick={clearFavs}>
+          Vaciar lista de favoritos
+        </button>
       )}
       <div className="card-grid">
         {state.favs.length > 0 ? (

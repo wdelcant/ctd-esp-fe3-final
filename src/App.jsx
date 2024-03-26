@@ -5,7 +5,7 @@ function App() {
   const { state } = useGlobalContext();
 
   return (
-    <div className={`App ${state.theme}`}>
+    <div className={`App ${state.theme} `}>
       <Layout />
     </div>
   );

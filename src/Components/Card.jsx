@@ -29,12 +29,11 @@ const Card = ({ item }) => {
     <div className="card">
       {state.toastMessage && <Toast message={state.toastMessage} />}
       <img className="card img" src="/images/doctor.jpg" alt="avatar" />
-      <h3>
-        {name} - {username} - {id}
-      </h3>
+      <h3>{name} </h3>
+      <h4>{username}</h4>
 
       <Link to={'/detail/' + id}>
-        <h3>Ver Detalle</h3>
+        <button className="detailButton">Ver Detalle</button>
       </Link>
 
       <label onClick={addFav} className="favButton">
