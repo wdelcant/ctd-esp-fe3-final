@@ -446,8 +446,6 @@ tr:nth-child(even) {
 }
 
 .contactContainer {
-  min-height: 90vh;
-  width: 80%;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -456,4 +454,9 @@ tr:nth-child(even) {
 .contactContainer h2,
 .contactContainer p {
   margin-bottom: 20px;
+}
+
+.notFoundImage {
+  display: block;
+  margin: 0 auto;
 }
