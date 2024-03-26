@@ -18,8 +18,6 @@ const Form = () => {
       `Gracias ${nombre}, te contactaremos lo antes posible vía email`
     );
 
-    console.log('Datos del formulario:', { nombre, email });
-
     setNombre('');
     setEmail('');
     setError('');

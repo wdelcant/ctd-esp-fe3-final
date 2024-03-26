@@ -1,9 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 import { reducer } from '../reducers/reducer';
 import { getDentists } from '../../Api/dentist';
 
@@ -27,7 +22,6 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     getDentists().then(data => {
       dispatch({ type: 'GET_LIST', payload: data });
-      console.log(data);
     });
   }, []);
 

@@ -64,11 +64,7 @@ const Detail = () => {
             <td>Website:</td>
             <td>
               <a
-                href={
-                  dentistSelected.website.startsWith('http')
-                    ? dentistSelected.website
-                    : `http://${dentistSelected.website}`
-                }
+                href={dentistSelected.website}
                 target="_blank"
                 rel="noopener noreferrer"
               >
