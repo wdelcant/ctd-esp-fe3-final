@@ -206,6 +206,3 @@ tr:nth-child(even) {
   z-index: 100;
 }
 
-.toggle-button-label img.moon.white {
-  fill: #fff;
-}

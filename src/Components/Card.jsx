@@ -16,11 +16,13 @@ const Card = ({ item }) => {
 
   return (
     <div className="card">
+      <img className="card img" src="/images/doctor.jpg" alt="avatar" />
+      <h3>
+        {name} - {username} - {id}
+      </h3>
+
       <Link to={'/detail/' + id}>
-        <img className="card img" src="/images/doctor.jpg" alt="avatar" />
-        <h3>
-          {name} - {username} - {id}
-        </h3>
+        <h3>Ver Detalle</h3>
       </Link>
 
       <button onClick={addFav} className="favButton">
