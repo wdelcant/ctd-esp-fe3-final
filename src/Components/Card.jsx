@@ -2,11 +2,11 @@ import { useGlobalContext } from '../Components/utils/global.context';
 import { Link } from 'react-router-dom';
 
 const Card = ({ item }) => {
+  const { id, name, username } = item;
   const { state, dispatch } = useGlobalContext();
 
+  const isFav = state.favs.some(fav => fav.id === item.id);
   const addFav = () => {
-    const isFav = state.favs.some(fav => fav.id === item.id);
-
     if (isFav) {
       dispatch({ type: 'DEL_FAV', payload: item });
     } else {
@@ -16,15 +16,15 @@ const Card = ({ item }) => {
 
   return (
     <div className="card">
-      <Link to={'/detail/' + item.id}>
+      <Link to={'/detail/' + id}>
         <img className="card img" src="/images/doctor.jpg" alt="avatar" />
         <h3>
-          {item.name} - {item.username} - {item.id}
+          {name} - {username} - {id}
         </h3>
       </Link>
 
       <button onClick={addFav} className="favButton">
-        Add fav
+        {isFav ? 'Remove fav' : 'Add fav'}
       </button>
     </div>
   );
