@@ -10,29 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+main {
+  height: 100%;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.favButton {
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
-
 h1 {
   text-align: center;
-}
-
-nav {
-  display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
 }
 
 a {
@@ -76,17 +64,27 @@ form {
 }
 
 .card {
+  position: relative;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
   width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin: 20px;
 }
 
-.card:hover {
-  border: 0.5px solid rgb(206, 217, 142);
+.card img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.card h3 {
+  margin: 10px 0;
 }
 
 .card-grid {
@@ -97,6 +95,26 @@ form {
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.favButton {
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+}
+
+.favButton img.Fav {
+  width: 28px;
+  transition: 0.2s;
+}
+
+.favButton img.noFav {
+  width: 28px;
+  transition: 0.2s;
 }
 
 table {
@@ -124,6 +142,11 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+// agrega los svg de la luna y el sol blanco cuando este dark
+.dark .toggle-button-label img.sun {
+  fill: #fff;
 }
 
 .toggle-button-input {
@@ -189,7 +212,7 @@ tr:nth-child(even) {
 .toggle-button-label img.sun {
   position: absolute;
   width: 16.8px; /* 12px * 1.4 */
-  top: 5.6px; /* 4px * 1.4 */
+  top: -10px; /* 4px * 1.4 */
   left: 5.6px; /* 4px * 1.4 */
   fill: #fff;
   transition: 0.2s;
@@ -199,7 +222,7 @@ tr:nth-child(even) {
 .toggle-button-label img.moon {
   position: absolute;
   width: 16.8px; /* 12px * 1.4 */
-  top: 5.6px; /* 4px * 1.4 */
+  top: -10px; /* 4px * 1.4 */
   left: 47.6px; /* 34px * 1.4 */
   fill: #7e7e7e;
   transition: 0.2s;
@@ -224,4 +247,35 @@ tr:nth-child(even) {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar img {
+  height: 50px;
+}
+
+.navbar div {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar img {
+    height: 30px;
+  }
+
+  .navbar div {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

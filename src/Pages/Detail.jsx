@@ -69,7 +69,7 @@ const Detail = () => {
           </tr>
         </tbody>
       </table>
-      <button onClick={addFav}>{isFav ? '🔖' : '⭐'}</button>
+      <button onClick={addFav}>{isFav ? '✖️' : '⭐'}</button>
     </>
   );
 };

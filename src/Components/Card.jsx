@@ -37,9 +37,13 @@ const Card = ({ item }) => {
         <h3>Ver Detalle</h3>
       </Link>
 
-      <button onClick={addFav} className="favButton">
-        {isFav ? 'Remove fav' : 'Add fav'}
-      </button>
+      <label onClick={addFav} className="favButton">
+        {isFav ? (
+          <img src="/images/fav.svg" className="Fav" alt="Fav" />
+        ) : (
+          <img src="/images/nofav.svg" className="noFav" alt="noFav" />
+        )}
+      </label>
     </div>
   );
 };

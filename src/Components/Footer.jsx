@@ -1,7 +1,4 @@
-import { useGlobalContext } from '../Components/utils/global.context';
-
 const Footer = () => {
-  const { state } = useGlobalContext();
   return (
     <footer className="footer">
       <p className="footer-text">Powered by</p>
