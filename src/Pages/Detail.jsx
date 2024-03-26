@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../Components/utils/global.context';
-import { getDentistById } from '../Api/dentist';
+import { getDentistById } from '../Services/dentist';
 import Toast from '../Components/Toast';
 
 const Detail = () => {
