@@ -4,7 +4,7 @@ const Form = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  const [mensajeOk, setMensajeOk] = useState('');
+  const [messageOK, setMessageOK] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -14,7 +14,7 @@ const Form = () => {
       return;
     }
 
-    setMensajeOk(
+    setMessageOK(
       `Gracias ${nombre}, te contactaremos lo antes posible vía email`
     );
 
@@ -25,8 +25,8 @@ const Form = () => {
 
   return (
     <div className="formContainer">
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {mensajeOk && <p style={{ color: 'green' }}>{mensajeOk}</p>}
+      {error && <div className="errorMessage">{error}</div>}
+      {messageOK && <div className="successMessage">{messageOK}</div>}
       <form onSubmit={handleSubmit}>
         <div className="formField">
           <label htmlFor="nombre">Nombre completo:</label>

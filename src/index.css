@@ -65,13 +65,12 @@ footer > p {
 }
 
 .dark footer a:hover {
-  color: rgb(136, 136, 136);
+  color: rgb(136, 136, 136);s
 }
 
 form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   width: 300px;
   height: 100px;
   margin: 0 auto;
@@ -410,6 +409,7 @@ tr:nth-child(even) {
 .formContainer {
   width: 80%;
   margin: 0 auto;
+  padding: 50px;
 }
 
 .formField {
@@ -534,4 +534,31 @@ tr:nth-child(even) {
 .dark .text-skeleton,
 .dark .button-skeleton {
   animation-name: pulse-dark;
+}
+
+.errorMessage {
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+    width: 300px;
+}
+
+.successMessage {
+  color: white;
+  background-color: green;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+    width: 300px;
+
+}
+
+.errorMessage, .successMessage {
+  /* existing styles */
+  margin: 10px auto;
+  display: block;
 }
