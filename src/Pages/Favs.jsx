@@ -11,7 +11,7 @@ const Favs = () => {
     dispatch({ type: 'CLEAR_FAVS' });
     dispatch({
       type: 'SET_TOAST',
-      payload: 'La lista de favoritos ha sido vaciada',
+      payload: 'The favorites list has been cleared',
     });
     setTimeout(() => dispatch({ type: 'CLEAR_TOAST' }), 5000);
   };
@@ -22,14 +22,14 @@ const Favs = () => {
       <h1>Dentists Favs</h1>
       {state.favs.length > 0 && (
         <button className="clearButton" onClick={clearFavs}>
-          Vaciar lista de favoritos
+          Clear favorites list
         </button>
       )}
       <div className="card-grid">
         {state.favs.length > 0 ? (
           state.favs.map(item => <Card key={item.id} item={item} />)
         ) : (
-          <h3>No tienes favoritos agregados.</h3>
+          <h3>You have no favorites added.</h3>
         )}
       </div>
     </>

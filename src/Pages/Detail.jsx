@@ -22,13 +22,13 @@ const Detail = () => {
       dispatch({ type: 'DEL_FAV', payload: dentistSelected });
       dispatch({
         type: 'SET_TOAST',
-        payload: `El dentista ${dentistSelected.name} fue removido de favoritos`,
+        payload: `The dentist ${dentistSelected.name} was removed from favorites`,
       });
     } else {
       dispatch({ type: 'ADD_FAV', payload: dentistSelected });
       dispatch({
         type: 'SET_TOAST',
-        payload: `El dentista ${dentistSelected.name} fue agregado a favoritos`,
+        payload: `The dentist ${dentistSelected.name} was added to favorites`,
       });
     }
     setTimeout(() => dispatch({ type: 'CLEAR_TOAST' }), 3000);
@@ -75,7 +75,7 @@ const Detail = () => {
         </tbody>
       </table>
       <button onClick={addFav} className="addFavButton">
-        {isFav ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
+        {isFav ? 'Remove from favorites' : 'Add to favorites'}
       </button>
     </>
   );

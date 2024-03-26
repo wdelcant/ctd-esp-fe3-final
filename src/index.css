@@ -69,11 +69,9 @@ footer > p {
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
+  width: 320px;
   height: 100px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .card {
@@ -407,9 +405,10 @@ tr:nth-child(even) {
 }
 
 .formContainer {
-  width: 80%;
-  margin: 0 auto;
-  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .formField {

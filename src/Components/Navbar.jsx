@@ -1,10 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { routes } from '../Routes/routes';
 import ToogleButton from './ToggleButton';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-
   return (
     <nav className="navbar">
       <img src="/images/logo.png" alt="Logo" />

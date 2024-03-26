@@ -1,19 +1,16 @@
 import { useGlobalContext } from '../Components/utils/global.context';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
 import Toast from '../Components/Toast';
 
 const Card = ({ item }) => {
   const { id, name, username } = item;
   const { state, dispatch } = useGlobalContext();
 
-  const [loading, setLoading] = useState(true); // Crea un estado local para el loading
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    // Simula un tiempo de carga de 3 segundos
     setTimeout(() => {
-      setLoading(false); // Pone el loading en false
+      setLoading(false);
     }, 1000);
   }, []);
 
@@ -23,19 +20,19 @@ const Card = ({ item }) => {
       dispatch({ type: 'DEL_FAV', payload: item });
       dispatch({
         type: 'SET_TOAST',
-        payload: `El dentista ${name} fue removido de favoritos`,
+        payload: `The dentist ${name} was removed from favorites`,
       });
     } else {
       dispatch({ type: 'ADD_FAV', payload: item });
       dispatch({
         type: 'SET_TOAST',
-        payload: `El dentista ${name} fue agregado a favoritos`,
+        payload: `The dentist ${name} was added to favorites`,
       });
     }
     setTimeout(() => dispatch({ type: 'CLEAR_TOAST' }), 5000);
   };
 
-  return loading ? ( // Si los datos se están cargando
+  return loading ? (
     <div className="card card-skeleton">
       <div className="img-skeleton"> </div>
       <p className="text-skeleton"> </p>
@@ -50,7 +47,7 @@ const Card = ({ item }) => {
       <h4>{username}</h4>
 
       <Link to={'/detail/' + id}>
-        <button className="detailButton">Ver Detalle</button>
+        <button className="detailButton">View Details</button>
       </Link>
 
       <label onClick={addFav} className="favButton">

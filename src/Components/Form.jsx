@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Form = () => {
-  const [nombre, setNombre] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [messageOK, setMessageOK] = useState('');
@@ -9,16 +9,16 @@ const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (nombre.length <= 5 || !email.includes('@') || !email.includes('.')) {
-      setError('Por favor verifique su información nuevamente');
+    if (name.length <= 5 || !email.includes('@') || !email.includes('.')) {
+      setError('Please complete the form correctly');
       return;
     }
 
     setMessageOK(
-      `Gracias ${nombre}, te contactaremos lo antes posible vía email`
+      `Thanks ${name.toUpperCase()}! We will send you the best offers to ${email}`
     );
 
-    setNombre('');
+    setName('');
     setEmail('');
     setError('');
   };
@@ -29,12 +29,12 @@ const Form = () => {
       {messageOK && <div className="successMessage">{messageOK}</div>}
       <form onSubmit={handleSubmit}>
         <div className="formField">
-          <label htmlFor="nombre">Nombre completo:</label>
+          <label htmlFor="name">Full Name:</label>
           <input
             type="text"
-            id="nombre"
-            value={nombre}
-            onChange={event => setNombre(event.target.value)}
+            id="name"
+            value={name}
+            onChange={event => setName(event.target.value)}
             required
           />
         </div>
@@ -49,7 +49,7 @@ const Form = () => {
           />
         </div>
         <button type="submit" className="submitButton">
-          Enviar
+          Send
         </button>
       </form>
     </div>
