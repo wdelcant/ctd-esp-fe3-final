@@ -3,7 +3,6 @@ import {
   useContext,
   useEffect,
   useReducer,
-  useState,
 } from 'react';
 import { reducer } from '../reducers/reducer';
 import { getDentists } from '../../Api/dentist';
@@ -13,6 +12,7 @@ export const initialState = {
   data: [],
   dentistSelected: {},
   favs: JSON.parse(localStorage.getItem('favs')) || [],
+  toastMessage: null,
 };
 
 export const ContextGlobal = createContext(undefined);

@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../Components/utils/global.context';
 import { getDentistById } from '../Api/dentist';
+import { useState } from 'react';
+import Toast from '../Components/Toast';
 
 const Detail = () => {
   const { id } = useParams();
@@ -15,17 +17,27 @@ const Detail = () => {
   }, [id]);
 
   const isFav = state.favs.some(fav => fav.id === dentistSelected.id);
-  
+
   const addFav = () => {
     if (isFav) {
       dispatch({ type: 'DEL_FAV', payload: dentistSelected });
+      dispatch({
+        type: 'SET_TOAST',
+        payload: `El dentista ${dentistSelected.name} fue removido de favoritos`,
+      });
     } else {
       dispatch({ type: 'ADD_FAV', payload: dentistSelected });
+      dispatch({
+        type: 'SET_TOAST',
+        payload: `El dentista ${dentistSelected.name} fue agregado a favoritos`,
+      });
     }
+    setTimeout(() => dispatch({ type: 'CLEAR_TOAST' }), 3000);
   };
 
   return (
     <>
+      {state.toastMessage && <Toast message={state.toastMessage} />}
       <h1>Detail Dentist id </h1>
       <table className="detail-table">
         <tbody>

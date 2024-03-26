@@ -15,6 +15,10 @@ export const reducer = (state, action) => {
       return { ...state, favs: [] };
     case 'CHANGE_THEME':
       return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
+    case 'SET_TOAST':
+      return { ...state, toastMessage: action.payload };
+    case 'CLEAR_TOAST':
+      return { ...state, toastMessage: null };
     default:
       return state;
   }
