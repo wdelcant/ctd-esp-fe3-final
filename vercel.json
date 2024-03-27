@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/src/Pages/NotFound.jsx" }]
+}
