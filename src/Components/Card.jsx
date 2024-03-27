@@ -6,6 +6,7 @@ import Toast from '../Components/Toast';
 const Card = ({ item }) => {
   const { id, name, username } = item;
   const { state, dispatch } = useGlobalContext();
+  const [isClicked, setIsClicked] = useState(false);
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -16,6 +17,8 @@ const Card = ({ item }) => {
 
   const isFav = state.favs.some(fav => fav.id === item.id);
   const addFav = () => {
+    setIsClicked(true);
+    setTimeout(() => setIsClicked(false), 300);
     if (isFav) {
       dispatch({ type: 'DEL_FAV', payload: item });
       dispatch({
@@ -52,9 +55,17 @@ const Card = ({ item }) => {
 
       <label onClick={addFav} className="favButton">
         {isFav ? (
-          <img src="/images/fav.svg" className="Fav" alt="Fav" />
+          <img
+            src="/images/fav.svg"
+            className={`Fav ${isClicked ? 'animate' : ''}`}
+            alt="Fav"
+          />
         ) : (
-          <img src="/images/nofav.svg" className="noFav" alt="noFav" />
+          <img
+            src="/images/nofav.svg"
+            className={`noFav ${isClicked ? 'animate' : ''}`}
+            alt="noFav"
+          />
         )}
       </label>
     </div>
