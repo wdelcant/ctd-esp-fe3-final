@@ -10,7 +10,7 @@ const Toast = ({ message, duration = 5000 }) => {
 
   if (!visible) return null;
 
-  return <div className="toast">{message}</div>;
+  return <div className={`toast ${visible ? 'show' : 'hide'}`}>{message}</div>;
 };
 
 export default Toast;
