@@ -17,7 +17,7 @@ const Favs = () => {
   };
 
   return (
-    <>
+    <section className="favContainer">
       {state.toastMessage && <Toast message={state.toastMessage} />}
       <h1>Dentists Favs</h1>
       {state.favs.length > 0 && (
@@ -32,7 +32,7 @@ const Favs = () => {
           <h3>You have no favorites added.</h3>
         )}
       </div>
-    </>
+    </section>
   );
 };
 

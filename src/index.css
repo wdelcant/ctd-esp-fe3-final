@@ -108,6 +108,15 @@ form {
   margin: 0 auto;
 }
 
+.favContainer {
+  min-height: 90vh;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .favButton {
   position: absolute;
   top: -25px;
@@ -362,6 +371,13 @@ tr:nth-child(even) {
   }
 }
 
+.detailContainer {
+  min-height: 90vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
 .detailButton {
   padding: 10px 20px;
   border: none;
@@ -503,6 +519,7 @@ tr:nth-child(even) {
 }
 
 .contactContainer {
+  min-height: 90vh;
   margin: 0 auto;
   text-align: center;
   padding: 20px;

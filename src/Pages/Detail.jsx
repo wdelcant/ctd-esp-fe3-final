@@ -36,14 +36,14 @@ const Detail = () => {
   };
 
   return (
-    <>
+    <section className='detailContainer'>
       {state.toastMessage && <Toast message={state.toastMessage} />}
       <h1>Detail Dentist id </h1>
       <DetailTable dentistSelected={dentistSelected} />
       <button onClick={addFav} className="addFavButton">
         {isFav ? 'Remove from favorites' : 'Add to favorites'}
       </button>
-    </>
+    </section>
   );
 };
 
