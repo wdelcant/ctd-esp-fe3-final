@@ -72,6 +72,29 @@ const Detail = () => {
               </a>
             </td>
           </tr>
+          <tr>
+            <td>Location:</td>
+            <td>
+              <iframe
+                title="Map Location"
+                width="100%"
+                height="150"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${
+                  parseFloat(dentistSelected.address?.geo?.lng) - 0.01
+                }%2C${parseFloat(dentistSelected.address?.geo?.lat) - 0.01}%2C${
+                  parseFloat(dentistSelected.address?.geo?.lng) + 0.01
+                }%2C${
+                  parseFloat(dentistSelected.address?.geo?.lat) + 0.01
+                }&layer=mapnik&marker=${dentistSelected.address?.geo?.lat}%2C${
+                  dentistSelected.address?.geo?.lng
+                }`}
+              />
+            </td>
+          </tr>
         </tbody>
       </table>
       <button onClick={addFav} className="addFavButton">

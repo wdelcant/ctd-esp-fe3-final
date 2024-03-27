@@ -316,6 +316,16 @@ tr:nth-child(even) {
 
 .navbar img {
   height: 50px;
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+  filter: drop-shadow: 10x 10x 5px #fff; 
+  &:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
 }
 
 .navbar div {

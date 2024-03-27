@@ -5,7 +5,9 @@ import ToogleButton from './ToggleButton';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <img src="/images/logo.png" alt="Logo" />
+      <Link to={routes.home}>
+        <img className="logo" src="/images/logo.png" alt="Logo" />
+      </Link>
       <div>
         <Link to={routes.home}>Home</Link>
         <Link to={routes.favs}>Favs</Link>
