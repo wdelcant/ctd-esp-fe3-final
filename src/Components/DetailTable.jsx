@@ -35,6 +35,14 @@ const DetailTable = ({ dentistSelected }) => {
           </td>
         </tr>
         <tr>
+          <td>Address:</td>
+          <td>
+            {dentistSelected.address?.street}, {dentistSelected.address?.suite}
+            <br />
+            {dentistSelected.address?.city}, {dentistSelected.address?.zipcode}
+          </td>
+        </tr>
+        <tr>
           <td>Location:</td>
           <td>
             <Map geo={dentistSelected.address?.geo} />
