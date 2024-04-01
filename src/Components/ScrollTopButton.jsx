@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Mostrar botón cuando el usuario se desplace hacia abajo
   const toggleVisibility = () => {
     if (window.scrollY > 100) {
       setIsVisible(true);
@@ -12,7 +11,6 @@ const ScrollToTopButton = () => {
     }
   };
 
-  // Subir a la parte superior de la página cuando el usuario haga clic en el botón
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
