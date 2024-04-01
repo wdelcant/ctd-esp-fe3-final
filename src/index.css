@@ -633,3 +633,30 @@ tr:nth-child(even) {
   margin: 10px auto;
   display: block;
 }
+
+
+.scroll-to-top{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  color: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  opacity: 1;
+}
+
+.dark .scroll-to-top {
+  background-color: #fff;
+  color: #fff;
+}
