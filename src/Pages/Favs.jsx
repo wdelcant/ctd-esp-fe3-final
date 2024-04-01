@@ -1,7 +1,7 @@
 import Card from '../Components/Card';
-import { useGlobalContext } from '../Components/utils/global.context';
+import { useGlobalContext } from '../utils/global.context';
 import { useState } from 'react';
-import Toast from '../Components/Toast';
+import Toast from '../Hooks/Toast';
 
 const Favs = () => {
   const { state, dispatch } = useGlobalContext();

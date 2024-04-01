@@ -1,4 +1,4 @@
-import { useGlobalContext } from './Components/utils/global.context';
+import { useGlobalContext } from './utils/global.context';
 import Layout from './Components/Layout';
 
 function App() {

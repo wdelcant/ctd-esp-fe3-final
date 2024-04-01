@@ -1,7 +1,7 @@
-import { useGlobalContext } from '../Components/utils/global.context';
+import { useGlobalContext } from '../utils/global.context';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Toast from '../Components/Toast';
+import Toast from '../Hooks/Toast';
 
 const Card = ({ item }) => {
   const { id, name, username } = item;

@@ -1,4 +1,4 @@
-import { useGlobalContext } from './utils/global.context';
+import { useGlobalContext } from '../utils/global.context';
 
 const ToggleButton = () => {
   const { toggleTheme, state } = useGlobalContext();

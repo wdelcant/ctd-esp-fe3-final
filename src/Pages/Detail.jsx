@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useGlobalContext } from '../Components/utils/global.context';
+import { useGlobalContext } from '../utils/global.context';
 import { getDentistById } from '../Services/dentist';
 import DetailTable from '../Components/DetailTable';
-import Toast from '../Components/Toast';
+import Toast from '../Hooks/Toast';
 
 const Detail = () => {
   const { id } = useParams();
