@@ -124,6 +124,7 @@ form {
   border: none;
   background-color: transparent;
   font-size: 24px;
+  user-select: none;
 }
 
 @keyframes heartClick {
@@ -209,6 +210,7 @@ tr:nth-child(even) {
   width: 0;
   height: 0;
   visibility: hidden;
+  user-select: none;
 }
 
 .toggle-button-input:checked + .toggle-button-label {
@@ -273,6 +275,7 @@ tr:nth-child(even) {
   fill: #fff;
   transition: 0.2s;
   z-index: 100;
+  user-select: none;
 }
 
 .toggle-button-label img.moon {
@@ -283,6 +286,7 @@ tr:nth-child(even) {
   fill: #7e7e7e;
   transition: 0.2s;
   z-index: 100;
+  user-select: none;
 }
 
 .toast {
@@ -360,6 +364,7 @@ tr:nth-child(even) {
 .navbar img {
   height: 50px;
   cursor: pointer;
+  user-select: none;
 }
 
 .logo {
@@ -399,6 +404,8 @@ tr:nth-child(even) {
 }
 
 .detailButton {
+  user-select: none;
+
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -466,6 +473,7 @@ tr:nth-child(even) {
   text-decoration: none;
   display: block;
   margin: 0 auto;
+  user-select: none;
 }
 
 .dark .clearButton {
@@ -487,6 +495,7 @@ tr:nth-child(even) {
   text-decoration: none;
   display: block;
   margin: 20px auto 0;
+  user-select: none;
 }
 
 .dark .addFavButton {
@@ -528,6 +537,7 @@ tr:nth-child(even) {
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+  user-select: none;
 }
 
 .dark .submitButton {
