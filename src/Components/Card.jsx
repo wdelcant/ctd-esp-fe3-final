@@ -45,7 +45,7 @@ const Card = ({ item }) => {
   ) : (
     <div className="card">
       {state.toastMessage && <Toast message={state.toastMessage} />}
-      <img className="card img" src="/images/doctor.jpg" alt="avatar" />
+      <img className="card profile" src="/images/doctor.jpg" alt="avatar" />
       <h3>{name} </h3>
       <h4>{username}</h4>
 
