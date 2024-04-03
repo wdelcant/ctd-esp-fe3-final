@@ -2,11 +2,25 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 import { reducer } from '../reducers/reducer';
 import { getDentists } from '../Services/dentist';
 
+const selecTheme = () => {
+  return (
+    localStorage.getItem('theme') ||
+    (window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light')
+  );
+};
+
+const selecFavs = () => {
+  return JSON.parse(localStorage.getItem('favs')) || [];
+};
+
 export const initialState = {
-  theme: localStorage.getItem('theme') || 'light',
+  theme: selecTheme(),
   data: [],
   dentistSelected: {},
-  favs: JSON.parse(localStorage.getItem('favs')) || [],
+  favs: selecFavs(),
   toastMessage: null,
 };
 
@@ -20,7 +34,7 @@ export const ContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getDentists().then(data => {
+    getDentists().then((data) => {
       dispatch({ type: 'GET_LIST', payload: data });
     });
   }, []);
